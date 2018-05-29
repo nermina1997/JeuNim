@@ -70,7 +70,7 @@ def s_w(m, k):
   
  
 def minProd(k):       
-    somme = 0  # initialisation de la somme
+    somme = 0  # Initialiser la somme
         
     for a in range(2, k+1) :
         max_window = len( bin(a) )-2        # longueur de a en binaire = longeur de maximal de la fenetre
