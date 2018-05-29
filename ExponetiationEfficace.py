@@ -18,7 +18,7 @@ def s_w(m, k):
         n = n[2:]   # se debarasse du '0b' de depart
         n = n[::-1] # on renverse la chaine de charactere pour faciliter son traitement
     
-        # Precalcule : les puissance impaire
+        # Les puissance impaire
       
         x = { 1:2, 2:4 }
         
@@ -29,7 +29,7 @@ def s_w(m, k):
         etape = len( range(1, 2**(k-1) ) ) + 1
     
         y, i = 1, len(n)-1
-        max_utile = 0   # variable qui servira a enlever le coups des valeurs precalculee non utile du total
+        max_utile = 0   # Elle servie à enlever le coups des valeurs precalculee non utile du total
     
         while i > -1 :
             if n[i] == '0': 
