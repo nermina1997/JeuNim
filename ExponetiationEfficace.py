@@ -29,7 +29,7 @@ def s_w(m, k):
         etape = len( range(1, 2**(k-1) ) ) + 1
     
         y, i = 1, len(n)-1
-        max_utile = 0   # Elle servie à enlever le coups des valeurs precalculee non utile du total
+        max_utile = 0   # Elle servia à enlever le coups des valeurs precalculee non utile du total
     
         while i > -1 :
             if n[i] == '0': 
@@ -39,7 +39,7 @@ def s_w(m, k):
                 etape += 1
                 
             else :
-                # retrouve la chaine de longeur < k et qui se termine par 1 
+                # Cherchons la chaine telle que de longeur < k et qui se termine par 1 
                 for j in range(k):
                     lower = max(i-j,0)
                     if n[lower] == '1':
@@ -48,13 +48,13 @@ def s_w(m, k):
     
                 y = y**(2**(i-e+1))
                 
-                # comptabilise le nombre de multiplication qui vient d'etre effectue
+                # Comptabilise le nombre de multiplication qui vient d'etre effectue
                 if y > 1 :
                     etape += i-e+1
                
                 y = y*x[d]
     
-                # max_utile reçoit le plus grand index utilise jusqu'ici
+                # max_utile reçoit le plus grand index utilisé 
                 max_utile = max(d, max_utile)
                 i = e-1
     
@@ -73,7 +73,7 @@ def minProd(k):
     somme = 0  # initialisation de la somme
         
     for a in range(2, k+1) :
-        max_window = len( bin(a) )-2        # longeur de maximal de la fenetre = longueur de a en binaire
+        max_window = len( bin(a) )-2        # longueur de a en binaire = longeur de maximal de la fenetre
         etapes = [ s_w(a, b) for b in range(1, max_window ) ]
         somme += min( etapes )
     
